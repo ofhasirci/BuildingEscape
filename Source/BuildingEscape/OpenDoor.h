@@ -3,7 +3,7 @@
 #pragma once
 
 #include "Engine/TriggerVolume.h"
-
+#include "Components/PrimitiveComponent.h"
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "OpenDoor.generated.h"
@@ -39,12 +39,10 @@ private:
 	UPROPERTY(EditAnywhere)
 	ATriggerVolume* PressurePlate;
 
-	AActor* ActorThatOpens;
-
 	UPROPERTY(EditAnywhere)
 	float DoorCloseDelay = 1.0f;
 
 	float LastDoorOpenTime;
 
-
+	float GetTotalMassOfActorsOnPlate();
 };
